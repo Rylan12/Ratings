@@ -14,40 +14,38 @@
       <el-switch v-model="allowDecimals" active-text="Allow decimal ratings">
       </el-switch>
     </div>
-    <CalculationSummary
-      type="rating"
-      :rating="rating"
-      :distribution="primaryDistribution"
-    />
-    <RatingCharts
-      :rating="rating"
-      :primary-distribution="primaryDistribution"
-      :secondary-distributions="secondaryDistributions"
-    />
-    <div class="section-container">
-      <h3>What does a rating of {{ rating }} mean?</h3>
-      <p>
-        An item with a rating of <strong>{{ rating }}</strong> is in the
-        <strong>{{ percentile }}{{ percentileOrdinal }} percentile</strong>.
-        This means that this item is ranked higher than
-        <strong>{{ percentile }}%</strong> of all items in the set that is being
-        compared.
-      </p>
-      <p>
-        About <strong>{{ frequency }}</strong> items has a rating of
-        <strong>{{ rating }}</strong
-        >. This is
-        <span v-if="rating >= 2">
-          <strong>{{ multiplierText(previousMultiplier) }}</strong>
-          the number of items with a rating of
-          <strong>{{ rating - 1 }}</strong> </span
-        ><span v-if="rating >= 2 && rating < 10">, and </span
-        ><span v-if="rating < 10">
-          <strong>{{ multiplierText(nextMultiplier) }}</strong>
-          the number of items with a rating of
-          <strong> {{ rating + 1 }}</strong></span
-        ><span>.</span>
-      </p>
+    <el-row class="hidden-sm-and-down">
+      <el-col :span="12">
+        <CalculationSummary
+          type="rating"
+          :rating="rating"
+          :distribution="primaryDistribution"
+        />
+        <RatingExplanation
+          :distribution="primaryDistribution"
+          :rating="rating"
+        />
+      </el-col>
+      <el-col :span="12">
+        <RatingCharts
+          :rating="rating"
+          :primary-distribution="primaryDistribution"
+          :secondary-distributions="secondaryDistributions"
+        />
+      </el-col>
+    </el-row>
+    <div class="hidden-md-and-up">
+      <CalculationSummary
+        type="rating"
+        :rating="rating"
+        :distribution="primaryDistribution"
+      />
+      <RatingExplanation :distribution="primaryDistribution" :rating="rating" />
+      <RatingCharts
+        :rating="rating"
+        :primary-distribution="primaryDistribution"
+        :secondary-distributions="secondaryDistributions"
+      />
     </div>
   </div>
 </template>

@@ -9,9 +9,7 @@
       <LineChart
         :chart-options="chartOptions"
         :chart-data="chartData"
-        :height="100"
-        :width="300"
-        chart-id="lineChart"
+        chart-id="rating-line-chart"
       ></LineChart>
     </client-only>
   </div>
@@ -40,7 +38,7 @@ export default {
     return {
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
       },
     }
   },
