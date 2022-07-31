@@ -28,6 +28,34 @@ export abstract class Distribution {
     return [1, Math.round(1 / this.pdf(rating))]
   }
   // abstract ratingFromPercentile(percentile: number): number
+
+  ratingChartData() {
+    return {
+      labels: [...Array(11).keys()].map((x) => x + 1),
+      datasets: [
+        {
+          label: 'CDF',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: [...Array(11).keys()].map((x) => this.cdf(x + 1)),
+          tension: 0.4,
+        },
+        {
+          label: 'PDF',
+          backgroundColor: 'rgba(54,162,235,0.2)',
+          borderColor: 'rgba(54,162,235,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(54,162,235,0.4)',
+          hoverBorderColor: 'rgba(54,162,235,1)',
+          data: [...Array(11).keys()].map((x) => this.pdf(x + 1)),
+          tension: 0.4,
+        },
+      ],
+    }
+  }
 }
 
 export class CustomDistribution extends Distribution {

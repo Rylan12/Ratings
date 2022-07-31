@@ -19,6 +19,11 @@
       :rating="rating"
       :distribution="primaryDistribution"
     />
+    <RatingCharts
+      :rating="rating"
+      :primary-distribution="primaryDistribution"
+      :secondary-distributions="secondaryDistributions"
+    />
     <div class="section-container">
       <h3>What does a rating of {{ rating }} mean?</h3>
       <p>

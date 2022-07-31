@@ -7,7 +7,7 @@
         <el-radio-button label="normal"> Normal </el-radio-button>
         <el-radio-button label="logistic"> Logistic </el-radio-button>
       </el-radio-group>
-      <p class="distribution-description">{{ distributionDescription }}</p>
+      <p class="secondary-text">{{ distributionDescription }}</p>
     </div>
     <RatingToPercentileCalculator :distribution-type="distributionType" />
     <CompareDistributions />
@@ -32,8 +32,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.distribution-description {
-  color: #909399;
-}
-</style>
+<style scoped></style>
