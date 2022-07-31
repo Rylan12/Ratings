@@ -9,6 +9,7 @@ export abstract class Distribution {
   percentileFromRating(rating: number): number {
     return this.cdf(rating) * 100
   }
+
   frequencyFromRating(rating: number): number {
     return this.pdf(rating) * 100
   }
