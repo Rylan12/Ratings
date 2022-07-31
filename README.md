@@ -1,5 +1,9 @@
 # Ratings
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0817ac47-f693-486b-af6f-c1d77cbfb8ba/deploy-status)](https://app.netlify.com/sites/ratings-rylanpolster/deploys)
+
+A site to visualize different rating systems
+
 ## Build Setup
 
 ```bash
