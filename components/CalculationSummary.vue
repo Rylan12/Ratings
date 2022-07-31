@@ -4,10 +4,7 @@
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="rating" label="Rating"></el-table-column>
       <el-table-column prop="percentile" label="Percentile"></el-table-column>
-      <el-table-column
-        prop="frequency"
-        label="Frequency (per 100)"
-      ></el-table-column>
+      <el-table-column prop="frequency" label="Frequency"> </el-table-column>
     </el-table>
   </div>
 </template>
@@ -39,12 +36,12 @@ export default {
     tableData() {
       const rating = this.rating
       const percentile = this.distribution.percentileFromRating(rating)
-      const frequency = this.distribution.frequencyFromRating(rating)
+      const frequency = this.distribution.frequencyStringFromRating(rating)
       return [
         {
           rating,
+          frequency,
           percentile: Math.round(100 * percentile) / 100,
-          frequency: Math.round(100 * frequency) / 100,
         },
       ]
     },

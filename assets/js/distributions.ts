@@ -13,6 +13,20 @@ export abstract class Distribution {
   frequencyFromRating(rating: number): number {
     return this.pdf(rating) * 100
   }
+
+  frequencyStringFromRating(rating: number, includePercentage = true): string {
+    const fraction = this.pdf(rating)
+    const denominator = Math.round(1 / fraction)
+    let result = `1 in ${denominator}`
+    if (includePercentage) {
+      result += ` (${Math.round(fraction * 100)}%)`
+    }
+    return result
+  }
+
+  frequencyFractionFromRating(rating: number): [number, number] {
+    return [1, Math.round(1 / this.pdf(rating))]
+  }
   // abstract ratingFromPercentile(percentile: number): number
 }
 

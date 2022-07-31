@@ -29,10 +29,19 @@
         compared.
       </p>
       <p>
-        About <strong>1 in 62</strong> items has a rating of
-        <strong>{{ rating }}</strong> or higher. There are twice as many items
-        with a rating of {{ Math.floor(rating) }} as there are with a rating of
-        {{ Math.floor(rating < 6 ? rating - 1 : rating + 1) }}.
+        About <strong>{{ frequency }}</strong> items has a rating of
+        <strong>{{ rating }}</strong
+        >. This is
+        <span v-if="rating >= 2">
+          <strong>{{ multiplierText(previousMultiplier) }}</strong>
+          the number of items with a rating of
+          <strong>{{ rating - 1 }}</strong> </span
+        ><span v-if="rating >= 2 && rating < 10">, and </span
+        ><span v-if="rating < 10">
+          <strong>{{ multiplierText(nextMultiplier) }}</strong>
+          the number of items with a rating of
+          <strong> {{ rating + 1 }}</strong></span
+        ><span>.</span>
       </p>
     </div>
   </div>
@@ -87,6 +96,35 @@ export default {
         return 'rd'
       } else {
         return 'th'
+      }
+    },
+    frequency() {
+      return this.primaryDistribution.frequencyStringFromRating(
+        this.rating,
+        false
+      )
+    },
+    previousMultiplier() {
+      return (
+        this.primaryDistribution.frequencyFromRating(this.rating) /
+        this.primaryDistribution.frequencyFromRating(this.rating - 1)
+      )
+    },
+    nextMultiplier() {
+      return (
+        this.primaryDistribution.frequencyFromRating(this.rating) /
+        this.primaryDistribution.frequencyFromRating(this.rating + 1)
+      )
+    },
+  },
+  methods: {
+    multiplierText(multiplier) {
+      if (multiplier === 1) {
+        return 'equal to'
+      } else if (multiplier > 1) {
+        return `${Math.round(100 * multiplier) / 100} times`
+      } else {
+        return `${Math.round(100 * multiplier) / 100} times`
       }
     },
   },

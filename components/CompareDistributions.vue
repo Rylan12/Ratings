@@ -15,7 +15,7 @@
         <el-table-column prop="logisticPercentile" label="Logistic">
         </el-table-column>
       </el-table-column>
-      <el-table-column v-if="show === 'frequency'" label="Frequency (per 100)">
+      <el-table-column v-if="show === 'frequency'" label="Frequency">
         <el-table-column prop="customFrequency" label="Custom">
         </el-table-column>
         <el-table-column prop="normalFrequency" label="Normal">
@@ -52,11 +52,10 @@ export default {
           logisticPercentile: round(
             distributions.logistic.percentileFromRating(i)
           ),
-          customFrequency: round(distributions.custom.frequencyFromRating(i)),
-          normalFrequency: round(distributions.normal.frequencyFromRating(i)),
-          logisticFrequency: round(
-            distributions.logistic.frequencyFromRating(i)
-          ),
+          customFrequency: distributions.custom.frequencyStringFromRating(i),
+          normalFrequency: distributions.normal.frequencyStringFromRating(i),
+          logisticFrequency:
+            distributions.logistic.frequencyStringFromRating(i),
         })
       }
       return data
