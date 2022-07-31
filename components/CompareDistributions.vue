@@ -1,6 +1,6 @@
 <template>
   <div class="section-container">
-    <h3>Standard Values</h3>
+    <h3>Compare Distributions</h3>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="rating" label="Rating"></el-table-column>
       <el-table-column
@@ -27,7 +27,7 @@ const round = (value) => {
 }
 
 export default {
-  name: 'StandardValues',
+  name: 'CompareDistributions',
   data() {
     const data = []
     for (let i = 1; i <= 10; i++) {

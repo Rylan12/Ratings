@@ -9,7 +9,7 @@
       </el-radio-group>
     </div>
     <RatingToPercentileCalculator :distribution-type="distributionType" />
-    <StandardValues />
+    <CompareDistributions />
   </div>
 </template>
 
