@@ -7,6 +7,7 @@
         <el-radio-button label="normal"> Normal </el-radio-button>
         <el-radio-button label="logistic"> Logistic </el-radio-button>
       </el-radio-group>
+      <p class="distribution-description">{{ distributionDescription }}</p>
     </div>
     <RatingToPercentileCalculator :distribution-type="distributionType" />
     <CompareDistributions />
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import { distributions } from 'assets/js/distributions'
+
 export default {
   name: 'RatingCalculator',
   data() {
@@ -21,7 +24,16 @@ export default {
       distributionType: 'custom',
     }
   },
+  computed: {
+    distributionDescription() {
+      return distributions[this.distributionType].description
+    },
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.distribution-description {
+  opacity: 50%;
+}
+</style>

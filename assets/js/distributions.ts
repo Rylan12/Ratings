@@ -1,12 +1,7 @@
 export abstract class Distribution {
   abstract type: string
+  abstract description: string
   mean: number = 6
-
-  get description(): string {
-    return (
-      this.type.charAt(0).toUpperCase() + this.type.slice(1) + ' Distribution'
-    )
-  }
 
   abstract pdf(x: number): number
   abstract cdf(x: number): number
@@ -19,6 +14,12 @@ export abstract class Distribution {
 
 export class CustomDistribution extends Distribution {
   type = 'custom'
+  description =
+    'A symmetric distribution where the frequency of each rating doubles as it increases. ' +
+    'For example, a rating of 4 is twice as frequent as a rating of 3 and half as ' +
+    'likely as a rating of 5. Likewise, a rating of 8 is half as likely as a rating ' +
+    'of 7 and twice as likely as a rating of 9.'
+
   d = 2
 
   pdf(x: number): number {
@@ -54,6 +55,11 @@ export class CustomDistribution extends Distribution {
 // https://en.wikipedia.org/wiki/Normal_distribution
 export class NormalDistribution extends Distribution {
   type = 'normal'
+  description =
+    'A normal distribution with a mean of 6 and a standard deviation of 1.6.' +
+    'This standard deviation was chosen because it closely mimics the custom ' +
+    "distribution. I don't know if this is a good idea or not..."
+
   standardDeviation: number = 1.6 // This is just a number that seems to work nicely
 
   pdf(x: number): number {
@@ -96,6 +102,11 @@ export class NormalDistribution extends Distribution {
 // https://en.wikipedia.org/wiki/Logistic_distribution
 export class LogisticDistribution extends Distribution {
   type = 'logistic'
+  description =
+    'A logistic distribution with a mean of 6 and a scale of 0.9. ' +
+    'This scale was chosen because it closely mimics the custom ' +
+    "distribution. I don't know if this is a good idea or not..."
+
   standardDeviation = 0.9 // This is just a number that seems to work nicely
 
   pdf(x: number): number {
