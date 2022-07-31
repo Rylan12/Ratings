@@ -34,6 +34,6 @@ export default {
 
 <style scoped>
 .distribution-description {
-  opacity: 50%;
+  color: #909399;
 }
 </style>
