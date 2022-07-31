@@ -1,7 +1,7 @@
 <template>
-  <el-row :gutter="20">
-    <el-col :span="12">
-      <h4>Choose a rating</h4>
+  <div>
+    <div class="section-container">
+      <h3>Choose a rating</h3>
       <el-slider
         v-model="rating"
         :min="1"
@@ -11,10 +11,16 @@
         :show-tooltip="false"
         show-input
       />
-      <el-checkbox v-model="allowDecimals">Allow decimal ratings</el-checkbox>
-    </el-col>
-    <el-col :span="12">
-      <h4>What does a rating of {{ rating }} mean?</h4>
+      <el-switch v-model="allowDecimals" active-text="Allow decimal ratings">
+      </el-switch>
+    </div>
+    <CalculationSummary
+      type="rating"
+      :rating="rating"
+      :distribution="primaryDistribution"
+    />
+    <div class="section-container">
+      <h3>What does a rating of {{ rating }} mean?</h3>
       <p>
         An item with a rating of <strong>{{ rating }}</strong> is in the
         <strong>{{ percentile }}{{ percentileOrdinal }} percentile</strong>.
@@ -28,19 +34,18 @@
         with a rating of {{ Math.floor(rating) }} as there are with a rating of
         {{ Math.floor(rating < 6 ? rating - 1 : rating + 1) }}.
       </p>
-      <p>{{ distribution.description }}</p>
-    </el-col>
-  </el-row>
+    </div>
+  </div>
 </template>
 
 <script>
-import { Distribution } from '@/assets/js/distributions'
+import { distributions } from '@/assets/js/distributions'
 
 export default {
   name: 'RatingToPercentileCalculator',
   props: {
-    distribution: {
-      type: Distribution,
+    distributionType: {
+      type: String,
       required: true,
     },
   },
@@ -51,8 +56,18 @@ export default {
     }
   },
   computed: {
+    primaryDistribution() {
+      return distributions[this.distributionType]
+    },
+    secondaryDistributions() {
+      return Object.entries(distributions).filter(
+        ([key]) => key !== this.distributionType
+      )
+    },
     percentile() {
-      return Math.floor(this.distribution.percentileFromRating(this.rating))
+      return Math.floor(
+        this.primaryDistribution.percentileFromRating(this.rating)
+      )
     },
     percentileOrdinal() {
       const roundedPercentile = this.percentile
