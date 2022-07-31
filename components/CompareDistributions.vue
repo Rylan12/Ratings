@@ -1,20 +1,28 @@
 <template>
   <div class="section-container">
     <h3>Compare Distributions</h3>
+    <el-radio-group v-model="show">
+      <el-radio label="percentile">Show Percentile</el-radio>
+      <el-radio label="frequency">Show Frequency</el-radio>
+    </el-radio-group>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="rating" label="Rating"></el-table-column>
-      <el-table-column
-        prop="customPercentile"
-        label="Custom Percentile"
-      ></el-table-column>
-      <el-table-column
-        prop="normalPercentile"
-        label="Normal Percentile"
-      ></el-table-column>
-      <el-table-column
-        prop="logisticPercentile"
-        label="Logistic Percentile"
-      ></el-table-column>
+      <el-table-column v-if="show === 'percentile'" label="Percentile">
+        <el-table-column prop="customPercentile" label="Custom">
+        </el-table-column>
+        <el-table-column prop="normalPercentile" label="Normal">
+        </el-table-column>
+        <el-table-column prop="logisticPercentile" label="Logistic">
+        </el-table-column>
+      </el-table-column>
+      <el-table-column v-if="show === 'frequency'" label="Frequency (per 100)">
+        <el-table-column prop="customFrequency" label="Custom">
+        </el-table-column>
+        <el-table-column prop="normalFrequency" label="Normal">
+        </el-table-column>
+        <el-table-column prop="logisticFrequency" label="Logistic">
+        </el-table-column>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -29,20 +37,30 @@ const round = (value) => {
 export default {
   name: 'CompareDistributions',
   data() {
-    const data = []
-    for (let i = 1; i <= 10; i++) {
-      data.push({
-        rating: i,
-        customPercentile: round(distributions.custom.percentileFromRating(i)),
-        normalPercentile: round(distributions.normal.percentileFromRating(i)),
-        logisticPercentile: round(
-          distributions.logistic.percentileFromRating(i)
-        ),
-      })
-    }
     return {
-      tableData: data,
+      show: 'percentile',
     }
+  },
+  computed: {
+    tableData() {
+      const data = []
+      for (let i = 1; i <= 10; i++) {
+        data.push({
+          rating: i,
+          customPercentile: round(distributions.custom.percentileFromRating(i)),
+          normalPercentile: round(distributions.normal.percentileFromRating(i)),
+          logisticPercentile: round(
+            distributions.logistic.percentileFromRating(i)
+          ),
+          customFrequency: round(distributions.custom.frequencyFromRating(i)),
+          normalFrequency: round(distributions.normal.frequencyFromRating(i)),
+          logisticFrequency: round(
+            distributions.logistic.frequencyFromRating(i)
+          ),
+        })
+      }
+      return data
+    },
   },
 }
 </script>
