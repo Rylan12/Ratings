@@ -40,4 +40,7 @@ export default {
   build: {
     transpile: [/^element-ui/],
   },
+
+  // We're deploying a static site to Netlify
+  target: 'static',
 }
