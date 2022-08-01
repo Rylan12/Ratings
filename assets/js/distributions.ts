@@ -6,6 +6,14 @@ export abstract class Distribution {
   abstract pdf(x: number): number
   abstract cdf(x: number): number
 
+  pdfEquation = (scope: any): number => {
+    return this.pdf(scope.x)
+  }
+
+  cdfEquation = (scope: any): number => {
+    return this.cdf(scope.x)
+  }
+
   percentileFromRating(rating: number): number {
     return this.cdf(rating) * 100
   }

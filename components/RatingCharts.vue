@@ -1,21 +1,12 @@
 <template>
   <div class="section-container">
     <h3>Chart</h3>
-    <p class="secondary-text">
-      The lines between points are smooth approximations and may not accurately
-      reflect the values between ratings.
-    </p>
-    <client-only placeholder="Loading charts...">
-      <LineChart
-        :chart-options="chartOptions"
-        :chart-data="chartData"
-        chart-id="rating-line-chart"
-      ></LineChart>
-    </client-only>
+    <div id="rating-chart"></div>
   </div>
 </template>
 
 <script>
+import functionPlot from 'function-plot'
 import { Distribution } from '@/assets/js/distributions'
 
 export default {
@@ -34,17 +25,38 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      chartOptions: {
-        responsive: true,
-        maintainAspectRatio: false,
-      },
-    }
+  watch: {
+    rating() {
+      this.drawChart()
+    },
+    primaryDistribution() {
+      this.drawChart()
+    },
   },
-  computed: {
-    chartData() {
-      return this.primaryDistribution.ratingChartData()
+  mounted() {
+    this.drawChart()
+  },
+  methods: {
+    drawChart() {
+      functionPlot({
+        target: '#rating-chart',
+        data: [
+          { graphType: 'polyline', fn: this.primaryDistribution.pdfEquation },
+          { graphType: 'polyline', fn: this.primaryDistribution.cdfEquation },
+          {
+            fnType: 'parametric',
+            graphType: 'polyline',
+            range: [0, 1],
+            skipTip: true,
+            x: this.rating.toString(),
+            y: 't',
+          },
+        ],
+        grid: true,
+        xAxis: { domain: [1, 11], label: 'Rating' },
+        yAxis: { domain: [0, 1], label: 'Probability' },
+        disableZoom: true,
+      })
     },
   },
 }
