@@ -1,7 +1,7 @@
 <template>
   <div class="section-container">
     <h3>Chart</h3>
-    <div id="rating-chart"></div>
+    <div :id="chartId"></div>
   </div>
 </template>
 
@@ -12,6 +12,10 @@ import { Distribution } from '@/assets/js/distributions'
 export default {
   name: 'RatingCharts',
   props: {
+    chartId: {
+      type: String,
+      required: true,
+    },
     rating: {
       type: Number,
       required: true,
@@ -39,7 +43,7 @@ export default {
   methods: {
     drawChart() {
       functionPlot({
-        target: '#rating-chart',
+        target: `#${this.chartId}`,
         data: [
           { graphType: 'polyline', fn: this.primaryDistribution.pdfEquation },
           { graphType: 'polyline', fn: this.primaryDistribution.cdfEquation },

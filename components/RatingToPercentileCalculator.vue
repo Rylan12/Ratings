@@ -28,6 +28,7 @@
       </el-col>
       <el-col :span="12">
         <RatingCharts
+          chart-id="side-rating-chart"
           :rating="rating"
           :primary-distribution="primaryDistribution"
           :secondary-distributions="secondaryDistributions"
@@ -42,6 +43,7 @@
       />
       <RatingExplanation :distribution="primaryDistribution" :rating="rating" />
       <RatingCharts
+        chart-id="full-col-rating-chart"
         :rating="rating"
         :primary-distribution="primaryDistribution"
         :secondary-distributions="secondaryDistributions"
