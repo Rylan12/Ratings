@@ -1,6 +1,8 @@
 <template>
   <div ref="boundingDiv" class="section-container">
     <h3>Chart</h3>
+    <el-checkbox v-model="showPDF">Show PDF Curve (blue)</el-checkbox>
+    <el-checkbox v-model="showCDF">Show CDF Curve (red)</el-checkbox>
     <div :id="chartId"></div>
   </div>
 </template>
@@ -25,11 +27,23 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      showPDF: true,
+      showCDF: true,
+    }
+  },
   watch: {
     rating() {
       this.drawChart()
     },
     primaryDistribution() {
+      this.drawChart()
+    },
+    showPDF() {
+      this.drawChart()
+    },
+    showCDF() {
       this.drawChart()
     },
   },
@@ -39,12 +53,26 @@ export default {
   methods: {
     drawChart() {
       const width = this.$refs.boundingDiv.clientWidth
+      const dataSets = []
+      if (this.showPDF) {
+        dataSets.push({
+          graphType: 'polyline',
+          fn: this.primaryDistribution.pdfEquation,
+          color: '#409EFF',
+        })
+      }
+      if (this.showCDF) {
+        dataSets.push({
+          graphType: 'polyline',
+          fn: this.primaryDistribution.cdfEquation,
+          color: '#F56C6C',
+        })
+      }
 
       functionPlot({
         target: `#${this.chartId}`,
         data: [
-          { graphType: 'polyline', fn: this.primaryDistribution.pdfEquation },
-          { graphType: 'polyline', fn: this.primaryDistribution.cdfEquation },
+          ...dataSets,
           {
             fnType: 'parametric',
             graphType: 'polyline',
@@ -52,6 +80,7 @@ export default {
             skipTip: true,
             x: this.rating.toString(),
             y: 't',
+            color: '#909399',
           },
         ],
         width,
