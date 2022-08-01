@@ -35,20 +35,25 @@
         />
       </el-col>
     </el-row>
-    <div class="hidden-md-and-up">
-      <CalculationSummary
-        type="rating"
-        :rating="rating"
-        :distribution="primaryDistribution"
-      />
-      <RatingExplanation :distribution="primaryDistribution" :rating="rating" />
-      <RatingCharts
-        chart-id="full-col-rating-chart"
-        :rating="rating"
-        :primary-distribution="primaryDistribution"
-        :secondary-distributions="secondaryDistributions"
-      />
-    </div>
+    <el-row class="hidden-md-and-up">
+      <el-col :span="24">
+        <CalculationSummary
+          type="rating"
+          :rating="rating"
+          :distribution="primaryDistribution"
+        />
+        <RatingExplanation
+          :distribution="primaryDistribution"
+          :rating="rating"
+        />
+        <RatingCharts
+          chart-id="full-col-rating-chart"
+          :rating="rating"
+          :primary-distribution="primaryDistribution"
+          :secondary-distributions="secondaryDistributions"
+        />
+      </el-col>
+    </el-row>
   </div>
 </template>
 
