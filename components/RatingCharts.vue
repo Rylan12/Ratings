@@ -1,5 +1,5 @@
 <template>
-  <div class="section-container">
+  <div ref="boundingDiv" class="section-container">
     <h3>Chart</h3>
     <div :id="chartId"></div>
   </div>
@@ -42,6 +42,8 @@ export default {
   },
   methods: {
     drawChart() {
+      const width = this.$refs.boundingDiv.clientWidth
+
       functionPlot({
         target: `#${this.chartId}`,
         data: [
@@ -56,6 +58,8 @@ export default {
             y: 't',
           },
         ],
+        width,
+        height: width * (5 / 8),
         grid: true,
         xAxis: { domain: [1, 11], label: 'Rating' },
         yAxis: { domain: [0, 1], label: 'Probability' },
