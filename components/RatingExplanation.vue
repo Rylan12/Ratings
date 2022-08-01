@@ -23,6 +23,14 @@
         <strong> {{ rating + 1 }}</strong></span
       ><span>.</span>
     </p>
+    <p>
+      A <strong>{{ rating }}</strong> in a
+      <strong>{{ primaryDistribution.type }}</strong> distribution is
+      <strong>{{ distributionComparisons[0] }} frequent</strong> compared to a
+      <strong>{{ secondaryDistributions[0].type }}</strong> distribution and
+      <strong>{{ distributionComparisons[1] }} frequent</strong> compared to a
+      <strong>{{ secondaryDistributions[1].type }}</strong> distribution.
+    </p>
   </div>
 </template>
 
@@ -36,14 +44,20 @@ export default {
       type: Number,
       required: true,
     },
-    distribution: {
+    primaryDistribution: {
       type: Distribution,
+      required: true,
+    },
+    secondaryDistributions: {
+      type: Array,
       required: true,
     },
   },
   computed: {
     percentile() {
-      return Math.floor(this.distribution.percentileFromRating(this.rating))
+      return Math.floor(
+        this.primaryDistribution.percentileFromRating(this.rating)
+      )
     },
     percentileOrdinal() {
       const roundedPercentile = this.percentile
@@ -66,19 +80,41 @@ export default {
       }
     },
     frequency() {
-      return this.distribution.frequencyStringFromRating(this.rating, false)
+      return this.primaryDistribution.frequencyStringFromRating(
+        this.rating,
+        false
+      )
     },
     previousMultiplier() {
       return (
-        this.distribution.frequencyFromRating(this.rating) /
-        this.distribution.frequencyFromRating(this.rating - 1)
+        this.primaryDistribution.frequencyFromRating(this.rating) /
+        this.primaryDistribution.frequencyFromRating(this.rating - 1)
       )
     },
     nextMultiplier() {
       return (
-        this.distribution.frequencyFromRating(this.rating) /
-        this.distribution.frequencyFromRating(this.rating + 1)
+        this.primaryDistribution.frequencyFromRating(this.rating) /
+        this.primaryDistribution.frequencyFromRating(this.rating + 1)
       )
+    },
+    distributionComparisons() {
+      const comparisons = []
+      const frequency = this.primaryDistribution.frequencyFromRating(
+        this.rating
+      )
+      this.secondaryDistributions.forEach((distribution) => {
+        const comparisonFrequency = distribution.frequencyFromRating(
+          this.rating
+        )
+        if (frequency > comparisonFrequency) {
+          comparisons.push('more')
+        } else if (frequency < comparisonFrequency) {
+          comparisons.push('less')
+        } else {
+          comparisons.push('equally as')
+        }
+      })
+      return comparisons
     },
   },
   methods: {

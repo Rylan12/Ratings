@@ -22,8 +22,9 @@
           :distribution="primaryDistribution"
         />
         <RatingExplanation
-          :distribution="primaryDistribution"
           :rating="rating"
+          :primary-distribution="primaryDistribution"
+          :secondary-distributions="secondaryDistributions"
         />
       </el-col>
       <el-col :span="12">
@@ -31,7 +32,6 @@
           chart-id="side-rating-chart"
           :rating="rating"
           :primary-distribution="primaryDistribution"
-          :secondary-distributions="secondaryDistributions"
         />
       </el-col>
     </el-row>
@@ -43,14 +43,14 @@
           :distribution="primaryDistribution"
         />
         <RatingExplanation
-          :distribution="primaryDistribution"
           :rating="rating"
+          :primary-distribution="primaryDistribution"
+          :secondary-distributions="secondaryDistributions"
         />
         <RatingCharts
           chart-id="full-col-rating-chart"
           :rating="rating"
           :primary-distribution="primaryDistribution"
-          :secondary-distributions="secondaryDistributions"
         />
       </el-col>
     </el-row>
@@ -79,8 +79,8 @@ export default {
       return distributions[this.distributionType]
     },
     secondaryDistributions() {
-      return Object.entries(distributions).filter(
-        ([key]) => key !== this.distributionType
+      return Object.values(distributions).filter(
+        (dist) => dist.type !== this.distributionType
       )
     },
     percentile() {

@@ -24,10 +24,6 @@ export default {
       type: Distribution,
       required: true,
     },
-    secondaryDistributions: {
-      type: Array,
-      default: () => [],
-    },
   },
   watch: {
     rating() {
