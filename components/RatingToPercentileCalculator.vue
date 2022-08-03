@@ -9,7 +9,13 @@
         :step="allowDecimals ? 0.1 : 1"
         :show-stops="!allowDecimals"
         :show-tooltip="false"
-        show-input
+      />
+      <el-input-number
+        v-model="rating"
+        :min="1"
+        :max="allowDecimals ? 10.9 : 10"
+        :step="allowDecimals ? 0.1 : 1"
+        size="small"
       />
       <el-switch v-model="allowDecimals" active-text="Allow decimal ratings">
       </el-switch>
