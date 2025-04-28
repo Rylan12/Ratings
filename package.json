@@ -14,7 +14,7 @@
     "@element-plus/nuxt": "1.1.1",
     "element-plus": ">=2",
     "function-plot": "^1.25.1",
-    "nuxt": "^3.16.2",
+    "nuxt": "^3.17.0",
     "vue": "latest",
     "vue-router": "latest"
   },
