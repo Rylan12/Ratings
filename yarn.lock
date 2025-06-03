@@ -307,10 +307,10 @@
   resolved "https://registry.yarnpkg.com/@element-plus/icons-vue/-/icons-vue-2.3.1.tgz#1f635ad5fdd5c85ed936481525570e82b5a8307a"
   integrity sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==
 
-"@element-plus/nuxt@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@element-plus/nuxt/-/nuxt-1.1.1.tgz#ac1e1c13c82015f8cad7707bf8fbca11af1338ed"
-  integrity sha512-/A+a7mbmWtWfL4jW4fUlxGoUlCBtVQOv6JV9pwYIctpyqoyJjyt6dbyZ8v700KkMTec61oyPEd/dvp+ZO94J7w==
+"@element-plus/nuxt@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@element-plus/nuxt/-/nuxt-1.1.2.tgz#8485f673b23e3b74cc76766311790a2bdbcb0300"
+  integrity sha512-gaosNh7C0P9jAt2pL5RMYKfxy43hdXQiq/KrlScrwwd9OXxm9I48iPYVngRSVAZAnNFZ9619jRE5uS/1Y/snLQ==
   dependencies:
     "@nuxt/kit" "^3.13.2"
     magic-string "^0.27.0"
