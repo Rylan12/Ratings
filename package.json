@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": ">=0.2.6",
-    "@element-plus/nuxt": "1.1.3",
+    "@element-plus/nuxt": "1.1.4",
     "element-plus": ">=2",
     "function-plot": "^1.25.1",
     "nuxt": "^3.17.7",
