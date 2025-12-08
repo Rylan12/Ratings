@@ -3117,9 +3117,9 @@ electron-to-chromium@^1.5.73:
   integrity sha512-eHhqaja8tE/FNpIiBrvBjFV/SSKpyWHLvxuR9dPTdo+3V9ppdLmFB7ZZQ98qNovcngPLYIz0oOBF9P0FfZef5Q==
 
 element-plus@>=2:
-  version "2.11.9"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.11.9.tgz#2901f2f26300f1b461a1a2c04dd62d1e01cb9037"
-  integrity sha512-yTckX+fMGDGiBHVL1gpwfmjEc8P8OwuyU5ZX3f4FhMy2OdC2Y+OwQYWUXmuB+jFMukuSdnGYXYgHq6muBjSxTg==
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.12.0.tgz#489192aae6e2f08f0c78ac41c0115f8231e8c8c3"
+  integrity sha512-M9YLSn2np9OnqrSKWsiXvGe3qnF8pd94+TScsHj1aTMCD+nSEvucXermf807qNt6hOP040le0e5Aft7E9ZfHmA==
   dependencies:
     "@ctrl/tinycolor" "^3.4.1"
     "@element-plus/icons-vue" "^2.3.2"
