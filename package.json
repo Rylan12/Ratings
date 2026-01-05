@@ -13,7 +13,7 @@
     "@element-plus/icons-vue": ">=2.3.2",
     "@element-plus/nuxt": "1.1.4",
     "element-plus": ">=2",
-    "function-plot": "^1.25.1",
+    "function-plot": "^1.25.3",
     "nuxt": "^4.2.2",
     "vue": "latest",
     "vue-router": "latest"
