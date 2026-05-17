@@ -2285,12 +2285,12 @@ buffer@^6.0.3:
     base64-js "^1.3.1"
     ieee754 "^1.2.1"
 
-built-in-math-eval@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/built-in-math-eval/-/built-in-math-eval-0.3.0.tgz#240dc21cb389439588c61c460eb0076497efc41c"
-  integrity sha512-5XD5cujru60ooKJ4sGZqoH5v2Xvgw7ezV54gJX/OnPkgDKoH3BnlMEi8xW6hl8xaEjxKHebgrsawroeZnGwIMA==
+built-in-math-eval@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/built-in-math-eval/-/built-in-math-eval-0.3.2.tgz#96febb4ab3ae2c2941c3b2f33a565e09d02c688c"
+  integrity sha512-YUEswPdQJYtAP0E9pMq7va05M6iA/8U3Pthnlx+fwbej1G16hy/ZBxyLw+gZpxdijjGGqiwxm7vs3tW7IQuUnw==
   dependencies:
-    math-codegen "^0.3.5"
+    math-codegen "^0.4.3"
 
 bundle-name@^4.1.0:
   version "4.1.0"
@@ -3090,7 +3090,7 @@ exsolve@^1.0.7, exsolve@^1.0.8:
   resolved "https://registry.yarnpkg.com/exsolve/-/exsolve-1.0.8.tgz#7f5e34da61cd1116deda5136e62292c096f50613"
   integrity sha512-LmDxfWXwcTArk8fUEnOfSZpHOJ6zOMUJKOtFLFqJLoKJetuQG874Uc7/Kki7zFLzYybmZhp1M7+98pfMqeX8yA==
 
-extend@^3.0.0, extend@^3.0.2:
+extend@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
@@ -3173,12 +3173,12 @@ function-bind@^1.1.2:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.2.tgz#2c02d864d97f3ea6c8830c464cbd11ab6eab7a1c"
   integrity sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==
 
-function-plot@^1.25.3:
-  version "1.25.3"
-  resolved "https://registry.yarnpkg.com/function-plot/-/function-plot-1.25.3.tgz#6f3b9b0c6b726db0941f38d12044bd096d914c12"
-  integrity sha512-lCgo1CK4U+PLOr0KmXBmQ5n9oDboAXvTc0dOuT4flNIApM5FmfnJvq4YZWa7wfTL61v00urw3wr5uqF4RWAbHQ==
+function-plot@^1.25.4:
+  version "1.25.4"
+  resolved "https://registry.yarnpkg.com/function-plot/-/function-plot-1.25.4.tgz#e6744b0765f9a9460267f1423a41f5c42c599c82"
+  integrity sha512-fY8APi3mkhinoPjp5zjVRvazP8YLhsDtb0cTAksoF9HWiWYHRfT2qGHJpDMSs3Co5Zf/NF/j6ZoVzg4BmeVTTQ==
   dependencies:
-    built-in-math-eval "^0.3.0"
+    built-in-math-eval "^0.3.2"
     d3-axis "^3.0.0"
     d3-color "^3.1.0"
     d3-format "^3.1.0"
@@ -3188,7 +3188,7 @@ function-plot@^1.25.3:
     d3-shape "^3.1.0"
     d3-zoom "^3.0.0"
     events "^3.3.0"
-    interval-arithmetic-eval "^0.5.1"
+    interval-arithmetic-eval "^0.5.3"
 
 fuse.js@^7.1.0:
   version "7.1.0"
@@ -3428,13 +3428,13 @@ ini@4.1.1:
   resolved "https://registry.yarnpkg.com/internmap/-/internmap-2.0.3.tgz#6685f23755e43c524e251d29cbc97248e3061009"
   integrity sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==
 
-interval-arithmetic-eval@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/interval-arithmetic-eval/-/interval-arithmetic-eval-0.5.1.tgz#b888bf440f6bca8182b232d0b151507d541aaa0e"
-  integrity sha512-yzc3WdMtplWSHam53p9QcHqB96QoSU412n9UNI3Va+wB3ZWEISVCF2fmmmiqjkEaNIbD/am37wsBAXss4KvRwg==
+interval-arithmetic-eval@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/interval-arithmetic-eval/-/interval-arithmetic-eval-0.5.3.tgz#4adb5887087070b2b03a6b4a3286b0d2396576a8"
+  integrity sha512-8cR5Uerz+h1yDpb8Y2z3XfnI0XOnmWapI1CP/j84EKVocr6m6/rziLU558Vi7VGh4Bgfv9VeoOQAjDV4And+tg==
   dependencies:
     interval-arithmetic "^1.1.2"
-    math-codegen "^0.4.1"
+    math-codegen "^0.4.3"
 
 interval-arithmetic@^1.1.2:
   version "1.1.2"
@@ -3779,18 +3779,10 @@ magicast@^0.5.2:
     "@babel/types" "^7.29.0"
     source-map-js "^1.2.1"
 
-math-codegen@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/math-codegen/-/math-codegen-0.3.5.tgz#4799ee4677ded147766d003cca4b7879edd40cca"
-  integrity sha512-SsFYMv33FxMKYxI1PBiaZT+8AeDITK+k/PKhbHNlOPHIz5FIPF4wy78yWqanN6luXdsXENUZgCIC6xH6bfUq1g==
-  dependencies:
-    extend "^3.0.0"
-    mr-parser "^0.2.1"
-
-math-codegen@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/math-codegen/-/math-codegen-0.4.1.tgz#cc69fa3f278e4c95755c43d7a834008e64c7108f"
-  integrity sha512-Nb/gZIGfexUlCYfzWC9W9SkoShvOlRTrFLajLQjSNoAvLhiZQH4TzTKRh/3lZdezFcPfCl+SHEcsrYf3bJQTNg==
+math-codegen@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/math-codegen/-/math-codegen-0.4.3.tgz#46e4961e52969fc7c76c6a8c786e8003cdb416db"
+  integrity sha512-wDPK9BputFrirD7dXgpeIa1nkTy08Gh+nCALwEmmHSmKoCJtTYu1PjGC6Z08FmCjkHzVkhvep2mzyJWRgtOe5A==
   dependencies:
     extend "^3.0.2"
     mr-parser "^0.2.1"
