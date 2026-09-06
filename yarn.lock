@@ -2225,24 +2225,24 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.5.41.tgz#ac476497f74495f7525087270849841756555cf2"
   integrity sha512-IOnwSCma8j+9xJT6b8H0dEYidC80NsYmNMlZxRsukYcSoGaDBohog5hDxzeUXdFeGWFA++vWvxqOmrr96VlqMA==
 
-"@vueuse/core@14.3.0":
-  version "14.3.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-14.3.0.tgz#66c92f9ad7ee989e4a8fd23ec368e55429ea42b2"
-  integrity sha512-aHfz47g0ZhMtTVHmIzMVpJy8ePhhOy68GY5bv110+5DVtZ+W7BsOx+m61UNQqfrWyPztIHIanWa3E2tib3NFIw==
+"@vueuse/core@14.4.0":
+  version "14.4.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-14.4.0.tgz#a841da6b3c7d548bdeed5bf611e73f3de62d20fa"
+  integrity sha512-X4WHz1HlCzCBoYXesUkifzzWBAcZgXG8Fi5iNPQg/epdzOB3gu8Fawj3hvuwYR1nGcXGnvxwYYcUC/71++svtQ==
   dependencies:
     "@types/web-bluetooth" "^0.0.21"
-    "@vueuse/metadata" "14.3.0"
-    "@vueuse/shared" "14.3.0"
+    "@vueuse/metadata" "14.4.0"
+    "@vueuse/shared" "14.4.0"
 
-"@vueuse/metadata@14.3.0":
-  version "14.3.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-14.3.0.tgz#d782b00732d1568503027965c0be92bc1699d76c"
-  integrity sha512-BwxmbAzwAVF50+MW57GXOUEV61nFBGnlBvrTqj49PqWJu3uw7hdu72ztXeZ33RdZtDY6kO+bfCAE1PCn88Tktw==
+"@vueuse/metadata@14.4.0":
+  version "14.4.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-14.4.0.tgz#a2508499b803bac14775a9c9b852b8738fc16f98"
+  integrity sha512-swx/255R6JyHZFJhx845iz5CRWDZdCfvkZOpACWc5+c5WHcG24mv8gUT1WIdFQaHt6dq79rvILd9QnCWiyVm9g==
 
-"@vueuse/shared@14.3.0":
-  version "14.3.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-14.3.0.tgz#a3e7e6391f9ed7f363cbb28c32c4a278efaacbd0"
-  integrity sha512-bZpge9eSXwa4ToSiqJ7j6KRwhAsneMFoSz3LMWKQDkqimm3D/tbFlrklrs/IOqC8tEcYmXQZJ6N0UrjhBirVCg==
+"@vueuse/shared@14.4.0":
+  version "14.4.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-14.4.0.tgz#4e89813c7859d153d48c03d74bff78739f96723b"
+  integrity sha512-JRgY90Sz8DDtPMsaDflvPMp9xYk69JZAmbuDvAquUVXKr2gEjqtzGNTTthLfckH0BzBqvnu31gb4a8TGLRe79g==
 
 abbrev@^3.0.0:
   version "3.0.0"
@@ -3144,9 +3144,9 @@ electron-to-chromium@^1.5.73:
   integrity sha512-eHhqaja8tE/FNpIiBrvBjFV/SSKpyWHLvxuR9dPTdo+3V9ppdLmFB7ZZQ98qNovcngPLYIz0oOBF9P0FfZef5Q==
 
 element-plus@>=2:
-  version "2.14.4"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.14.4.tgz#6f364c3fd7b767b14c698c6ec09535998e069f4f"
-  integrity sha512-vMKR9tFcLeNrJgFXA3zhUn6YuRKUQW9d0btakBR8U1Iq8MfzkjMOGcgs5de2VgiLldHt69brmuBHpxc3bK4ZgQ==
+  version "2.14.5"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.14.5.tgz#476915f6470ef128b07ffebe982876af00f022ba"
+  integrity sha512-bghYy/S+qg87enHPXELirhEdDqsVAUGcGpbGIeG8dz0kwpIkGz7gYsifulBshXX74iRtHib85XWQj0uSH2A1Yg==
   dependencies:
     "@ctrl/tinycolor" "^4.2.0"
     "@element-plus/icons-vue" "^2.3.2"
@@ -3154,7 +3154,7 @@ element-plus@>=2:
     "@popperjs/core" "npm:@sxzz/popperjs-es@^2.11.8"
     "@types/lodash" "^4.17.24"
     "@types/lodash-es" "^4.17.12"
-    "@vueuse/core" "14.3.0"
+    "@vueuse/core" "14.4.0"
     async-validator "^4.2.5"
     dayjs "^1.11.20"
     lodash "^4.18.1"
