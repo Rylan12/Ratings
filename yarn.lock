@@ -3416,10 +3416,10 @@ function-bind@^1.1.2:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.2.tgz#2c02d864d97f3ea6c8830c464cbd11ab6eab7a1c"
   integrity sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==
 
-function-plot@^1.25.4:
-  version "1.25.4"
-  resolved "https://registry.yarnpkg.com/function-plot/-/function-plot-1.25.4.tgz#e6744b0765f9a9460267f1423a41f5c42c599c82"
-  integrity sha512-fY8APi3mkhinoPjp5zjVRvazP8YLhsDtb0cTAksoF9HWiWYHRfT2qGHJpDMSs3Co5Zf/NF/j6ZoVzg4BmeVTTQ==
+function-plot@^1.26.0:
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/function-plot/-/function-plot-1.26.0.tgz#1da35306e95f3e25764a99ac9a7e6442008b7a57"
+  integrity sha512-cCtvNF7n3UOw883Z0tYGG5zElLDLPFI2mlq7Gg3YDToPvSBFEvU4IIPZTuYIU+1BcbeBSpmlCdrYbmkWf12pGg==
   dependencies:
     built-in-math-eval "^0.3.2"
     d3-axis "^3.0.0"
